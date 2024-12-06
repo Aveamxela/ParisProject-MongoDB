@@ -1,0 +1,40 @@
+<%- include("../header.ejs") %>
+<main>
+    <% if(info){ %>
+        <p class="info"><%= info %></p>
+    <% } %>
+    <% if(error){ %>
+        <p class="error"><%= error %></p>
+    <% } %>
+    <% if(!info){ %>
+    <h1>Liste des balades</h1>
+    <% if(userIsAuthenticated){ %>
+        <a href="/add">Ajouter une nouvelle balade</a>
+    <% } %>
+    <% } %>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Arrondissement</th>
+            <th>Texte introductif</th>
+            <th>Date de publication</th>
+            <th>Actions</th>
+        </tr>
+        <% balades.forEach((balade) => { %>
+        <tr>        
+            <td><%= balade.nom || "" %></td>
+            <td><%= balade.arrondissement %></td>
+            <td><%= balade.texte_intro %></td>
+            <td><%= balade.date_publication ? new Date(balade.date_publication).toLocaleDateString("fr-FR") : "" %></td>
+            <td>
+                <a href ="/id/<%= balade._id %>">Voir la balade</a>
+                <% if(userIsAuthenticated || (userIsAuthenticated === false && !info)){ %>
+                <a href="/update/<%= balade._id %>">Modifier</a> 
+                <a href="/delete/<%= balade._id %>">Supprimer</a>
+                <% } %>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+</main>
+<%- include("../footer.ejs") %>

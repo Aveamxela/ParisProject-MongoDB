@@ -1,0 +1,42 @@
+.container {
+        max-width: 1200px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        font-family: Arial, sans-serif;
+
+        nav {
+            display: flex;
+            ul {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                list-style-type: none;
+                gap: 5px;
+            }
+    
+            li {
+                display: flex;
+                a {
+                    text-decoration: none;
+                    color: black;
+                    padding: 8px 15px;
+                    border-radius: 4px;    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+    
+            form {
+                display: flex;
+                input[type="text"], input[type="number"] {
+                    padding: 8px;
+                    margin-right: 5px;
+                    border: 1px solid grey;
+                    border-radius: 4px;
+                    width: 70px;
+                }
+            }
+        }
+    }

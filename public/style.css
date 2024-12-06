@@ -1,0 +1,127 @@
+body {
+  font-family: sans-serif;
+}
+body main {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+body main .info {
+  color: green;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+body main .error {
+  color: red;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+body main table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+body main table tr th {
+  background-color: grey;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid white;
+}
+body main table tr td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid grey;
+}
+body main table tr td > a {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+body main form {
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+body main form div > label, body main form div > input {
+  margin-bottom: 15px;
+}
+body main form div label {
+  margin-bottom: 5px;
+}
+body main form div input, body main form div textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+body button, body .form-button {
+  padding: 8px 15px;
+  background-color: grey;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+body button:hover, body .form-button:hover {
+  background-color: dark;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  margin-top: 20px;
+  background-color: grey;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.container {
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+}
+.container nav {
+  display: flex;
+}
+.container nav ul {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+  gap: 5px;
+}
+.container nav li {
+  display: flex;
+}
+.container nav li a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+.container nav li a:hover {
+  cursor: pointer;
+}
+.container nav form {
+  display: flex;
+}
+.container nav form input[type=text], .container nav form input[type=number] {
+  padding: 8px;
+  margin-right: 5px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  width: 70px;
+}
+
+/*# sourceMappingURL=style.css.map */

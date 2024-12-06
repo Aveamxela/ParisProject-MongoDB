@@ -1,0 +1,17 @@
+<%- include("../header.ejs") %>
+<main>
+    <% if (error) { %>
+        <p><%= error %></p>
+    <% } %>
+    
+    <h1>Détails de la balade</h1>
+    <% if (balade) { %>
+        <h2><%= balade.nom %></h2>
+        <p><strong>Arrondissement:</strong> <%= balade.arrondissement %></p>
+        <p><strong>Texte Introductif:</strong> <%= balade.texte_intro %></p>
+        <p><strong>Date de publication:</strong> <%= balade.date_publication ? new Date(balade.date_publication).toLocaleDateString("fr-FR") : "Non spécifiée" %></p>
+    <% } else { %>
+        <p>Balade non trouvée.</p>
+    <% } %>
+</main>
+<%- include("../footer.ejs") %>

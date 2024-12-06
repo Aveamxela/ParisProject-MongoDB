@@ -1,0 +1,30 @@
+<%- include("../header.ejs") %>
+<main>
+    <% if(balade && balade._id) { %>
+        <h1>Modifier une balade</h1>
+    <% } else { %>
+        <h1>Ajouter une nouvelle balade</h1>
+    <% } %>
+    <% if(error){ %>
+        <p><%= error %></p>
+    <% } %>    
+    <form action="<%= balade._id ? `/update-one/${balade._id}` : '/add' %>" method="POST">
+        <div>
+            <label for="nom">Nom de la balade :</label>
+            <input type="text" name="nom" placeholder="Nom de la balade" id="nom" value="<%= balade.nom ? balade.nom : '' %>">
+        </div>
+        <div>
+            <label for="arrondissement">Arrondissement :</label>
+            <input type="number" name="arrondissement" id="arrondissement" placeholder="Arrondissement" value="<%= balade.arrondissement ? balade.arrondissement : '' %>" min="1" max="20" required>
+        </div>
+        <div>
+            <label for="texte_intro">Texte introductif :</label>
+            <textarea name="texte_intro" id="texte_intro" placeholder="Texte introductif" required><%= balade.texte_intro ? balade.texte_intro : '' %></textarea>
+        </div>
+        <div>
+            <input class="form-button" type="submit" value="<%= balade._id ? 'Mettre à jour' : 'Ajouter' %>">
+        </div>
+    </form>
+
+</main>
+<%- include("../footer.ejs") %>

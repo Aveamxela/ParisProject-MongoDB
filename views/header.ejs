@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris - Balades</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/synthese">Synthèse des balades</a></li>
+                <% if(!userIsAuthenticated){ %>
+                    <li><a href="/register">Créer un compte</a></li>
+                    <li><a href="/login">Se connecter</a></li>
+                <% } %>
+                <% if(userIsAuthenticated){ %>
+                    <li><a href="/logout">Se déconnecter</a></li>
+                <% } %>
+                <li>
+                    <form action="/search" method="GET">
+                        <input type="text" name="search" placeholder="Recherche" required>
+                        <button type="submit">Rechercher</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="/arrondissement" method="GET">
+                        <input type="number" name="arrondissement" placeholder="Arrondissement" required min="1" max="20">
+                        <button type="submit">Rechercher</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
